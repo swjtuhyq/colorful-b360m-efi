@@ -35,9 +35,8 @@
 ### 1. ACPI部分
 1. SSDT-AWAC.aml
 2. SSDT-EC-USBX.aml
-3. SSDT-PLUG.aml
+3. SSDT-PLUG-DRTNIA.aml //这个在Mac13后不再使用
 4. SSDT-PMC.aml
-5. SSDT-UIAC.aml USB定制
 
 ### 2. Kernel部分
 
@@ -46,6 +45,7 @@
 3. WhateverGreen.kext :用于修复可能存在的显示问题
 4. AppleALC.kext :声卡驱动。
 5. RealtekRTL8111.kext :有线网卡驱动
+6. USBPorts.kext : 定制USB（打开全部的USB端口，打开后居然解决了网卡上传断流问题）
 
 ### 3. UEFI/Drivers
 
@@ -54,10 +54,9 @@
 
 ### 4. 其他Quirk
 
-1. AllowNvramReset: true。否则无法重置nvram。
-2. AllowSetDefault: true。否则无法使用Ctrl + 数字键设置默认系统。
-3. BootProtect: None。
-4. SecureBootModel: Disabled。
-5. Vault：Optional。以上三个关闭OC安全启动功能。
+1. AllowSetDefault: true。否则无法使用Ctrl + 数字键设置默认系统。
+2. BootProtect: None。
+3. SecureBootModel: Disabled。
+4. Vault：Optional。以上三个关闭OC安全启动功能。
 
 
